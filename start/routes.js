@@ -18,4 +18,4 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
-Route.resource('users').apiOnly()
+Route.resource('api/users', 'Api/UserController').apiOnly()

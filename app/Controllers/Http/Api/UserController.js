@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Database = use('Database')
+
 /**
  * Resourceful controller for interacting with users
  */
@@ -18,6 +20,8 @@ class UserController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    const users = await Database.table('users')
+    return users
   }
 
   /**
